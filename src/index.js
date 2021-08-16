@@ -1,1 +1,1 @@
-console.log('Hahaha')
+import './style.css'

@@ -8,8 +8,20 @@ module.exports = {
       template: './src/index.html',
     }),
   ],
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+  },
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
   },
 };

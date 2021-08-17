@@ -21,8 +21,9 @@
 - In your local PC, open your terminal in the folder you would like to clone the project.
 - Clone the repo with the command: `git clone (copied link)`; like so: `git clone https://github.com/TedLivist/to-do-list.git`
 - On the terminal, navigate into the directory like so: `cd to-do-list`
-- Run `npm run build` to bundle the files in the `src` folder
-- Open `dist/index.html` in the browser to view the page
+- Checkout to branch name like so: `git checkout [branch name]`
+- Run `npm i` to install the dependencies
+- Run `npm start` to start the application
 
 ## Author
 

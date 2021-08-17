@@ -1,4 +1,4 @@
-import './style.css'
+import './assets/stylesheet/style.css'
 const container = document.querySelector('.container')
 
 const tasksList = [

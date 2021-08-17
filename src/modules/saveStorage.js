@@ -1,3 +1,5 @@
-const saveStorage = () => {
-  console.log('Hahaha')
+const saveStorage = (items) => {
+  localStorage.setItem('todo-list', JSON.stringify(items))
 }
+
+export { saveStorage }

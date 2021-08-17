@@ -1,8 +1,8 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-plusplus */
 import './assets/stylesheet/style.css';
-import { check } from './modules/checkComplete.js'
-import { saveStorage } from './modules/saveStorage';
+import check from './modules/checkComplete.js';
+import saveStorage from './modules/saveStorage.js';
 
 const container = document.querySelector('.container');
 
@@ -58,9 +58,9 @@ const renderTasks = (tasks) => {
     });
 
     taskCheckox.addEventListener('change', (e) => {
-      check(e.target, tasks[i])
-      saveStorage(tasks)
-    })
+      check(e.target, tasks[i]);
+      saveStorage(tasks);
+    });
   }
 };
 

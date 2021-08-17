@@ -1,11 +1,11 @@
-function check(checkbox, item) {
-  if (checkbox.checked) {
-    item.completed = true
-    console.log(item)
-  } else {
-    item.completed = false
-    console.log(item)
-  }
-}
+/* eslint-disable linebreak-style */
 
-export { check }
+const check = (checkbox, item) => {
+  if (checkbox.checked) {
+    item.completed = true;
+  } else {
+    item.completed = false;
+  }
+};
+
+export default check;

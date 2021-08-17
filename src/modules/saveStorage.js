@@ -1,5 +1,7 @@
-const saveStorage = (items) => {
-  localStorage.setItem('todo-list', JSON.stringify(items))
-}
+/* eslint-disable linebreak-style */
 
-export { saveStorage }
+const saveStorage = (items) => {
+  localStorage.setItem('todo-list', JSON.stringify(items));
+};
+
+export default saveStorage;

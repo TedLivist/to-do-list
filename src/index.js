@@ -29,7 +29,7 @@ const renderTasks = (tasks) => {
     taskCheckbox.type = 'checkbox';
     taskCheckbox.classList.add('check');
     if (tasks[i].completed) {
-      taskCheckbox.checked = true
+      taskCheckbox.checked = true;
     }
 
     const taskDescription = document.createElement('label');
@@ -68,11 +68,11 @@ const renderTasks = (tasks) => {
 };
 
 window.addEventListener('load', () => {
-  let todoList = JSON.parse(localStorage.getItem('todo-list'))
-  
+  const todoList = JSON.parse(localStorage.getItem('todo-list'));
+
   if (todoList == null) {
-    renderTasks(tasksList)
+    renderTasks(tasksList);
   } else {
-    renderTasks(todoList)
+    renderTasks(todoList);
   }
-})
+});

@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+.task-box {
+  border: 2px solid red;
+  padding: 0.5rem;
+  width: 40%;
+}
+
+.container {
+  border: 1px solid black;
+}
+
+.task-header-text {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.fa-sync-alt {
+  float: right;
+}
+
+.task-input {
+  min-width: 90%;
+  font-style: italic;
+}
+
+.input-div {
+  display: flex;
+}

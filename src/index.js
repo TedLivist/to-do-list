@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-plusplus */
 import './assets/stylesheet/style.css';
+import { check } from './modules/checkComplete.js'
 
 const container = document.querySelector('.container');
 
@@ -54,6 +55,10 @@ const renderTasks = (tasks) => {
       dots.style.display = 'flex';
       trash.style.display = 'none';
     });
+
+    taskCheckox.addEventListener('change', (e) => {
+      check(e.target, tasks[i])
+    })
   }
 };
 

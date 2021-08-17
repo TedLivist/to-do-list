@@ -4,23 +4,11 @@ import './assets/stylesheet/style.css';
 import check from './modules/checkComplete.js';
 import saveStorage from './modules/saveStorage.js';
 import addTask from './modules/addTask';
+import editTask from './modules/editTask';
 
 const container = document.querySelector('.container');
 const taskInput = document.querySelector('.italics')
 const addButton = document.querySelector('.add')
-
-const tasksList = [
-  {
-    description: 'Do this',
-    completed: true,
-    index: 0,
-  },
-  {
-    description: 'Do that',
-    completed: true,
-    index: 1,
-  },
-];
 
 const renderTasks = () => {
 
@@ -70,6 +58,7 @@ const renderTasks = () => {
       taskDescription.addEventListener('blur', () => {
         dots.style.display = 'flex';
         trash.style.display = 'none';
+        editTask(taskDescription, storedList, storedList[i].index)
       });
 
       taskCheckbox.addEventListener('change', (e) => {

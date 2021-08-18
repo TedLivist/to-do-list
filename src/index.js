@@ -6,10 +6,12 @@ import saveStorage from './modules/saveStorage.js';
 import addTask from './modules/addTask';
 import editTask from './modules/editTask';
 import deleteTask from './modules/deleteTask.js';
+import deleteCompleted from './modules/deleteCompleted.js'
 
 const container = document.querySelector('.container');
 const taskInput = document.querySelector('.italics')
 const addButton = document.querySelector('.add')
+const clearCompletedLink = document.querySelector('.clear-all')
 
 const renderTasks = () => {
 
@@ -78,6 +80,10 @@ const renderTasks = () => {
 addButton.addEventListener('click', () => {
   addTask(taskInput)
 });
+
+clearCompletedLink.addEventListener('click', () => {
+  deleteCompleted()
+})
 
 window.addEventListener('load', () => {
   const todoList = JSON.parse(localStorage.getItem('todo-list'));

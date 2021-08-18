@@ -8,7 +8,7 @@ const deleteTask = (itemIndex) => {
 
   const newList = storedStuff.filter((i) => storedStuff.indexOf(i) !== itemIndex);
   for (let i = 0; i <= newList.length - 1; i++) {
-    newList[i].index = newList.indexOf(newList[i]);
+    newList[i].index = newList.indexOf(newList[i]) + 1;
   }
   saveStorage(newList);
   window.location.reload();

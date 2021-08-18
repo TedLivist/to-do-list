@@ -12,7 +12,7 @@ const addTask = (todoInput) => {
     list.push({
       description: todoInput.value,
       completed: false,
-      index: list.length,
+      index: list.length + 1,
     });
     saveStorage(list);
   } else {
@@ -20,7 +20,7 @@ const addTask = (todoInput) => {
     list.push({
       description: todoInput.value,
       completed: false,
-      index: 0,
+      index: 1,
     });
     saveStorage(list);
   }

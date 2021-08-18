@@ -69,7 +69,7 @@ const renderTasks = () => {
       taskDescription.addEventListener('blur', (e) => {
         dots.style.display = 'none';
         trash.style.display = 'flex';
-        editTask(e.target, storedList, storedList[i].index);
+        editTask(e.target, storedList, storedList[i]);
       });
 
       taskCheckbox.addEventListener('change', (e) => {

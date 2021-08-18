@@ -30,14 +30,16 @@ const renderTasks = () => {
       const taskCheckbox = document.createElement('input');
       taskCheckbox.type = 'checkbox';
       taskCheckbox.classList.add('check');
-      if (storedList[i].completed) {
-        taskCheckbox.checked = true;
-      }
 
       const taskDescription = document.createElement('label');
       taskDescription.classList.add('label');
       taskDescription.textContent = `${storedList[i].description}`;
       taskDescription.contentEditable = true;
+
+      if (storedList[i].completed) {
+        taskCheckbox.checked = true;
+        taskDescription.classList.add('strike')
+      }
 
       const dots = document.createElement('span');
       dots.innerHTML = "<i class='fas fa-ellipsis-v'></i>";
@@ -57,6 +59,7 @@ const renderTasks = () => {
       taskDescription.addEventListener('focus', () => {
         dots.style.display = 'none';
         trash.style.display = 'flex';
+        taskDescription.classList.remove('strike')
         trash.addEventListener('mousedown', (e) => {
           e.preventDefault()
           deleteTask(parseInt(trash.id))
@@ -70,7 +73,7 @@ const renderTasks = () => {
       });
 
       taskCheckbox.addEventListener('change', (e) => {
-        check(e.target, storedList[i]);
+        check(e.target, storedList[i], taskDescription);
         saveStorage(storedList);
       });
     }

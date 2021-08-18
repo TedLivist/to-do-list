@@ -5,6 +5,7 @@ import check from './modules/checkComplete.js';
 import saveStorage from './modules/saveStorage.js';
 import addTask from './modules/addTask';
 import editTask from './modules/editTask';
+import deleteTask from './modules/deleteTask.js';
 
 const container = document.querySelector('.container');
 const taskInput = document.querySelector('.italics')
@@ -17,7 +18,6 @@ const renderTasks = () => {
   }
 
   const storedList = JSON.parse(localStorage.getItem('todo-list'))
-
   if (storedList != null) {
     for (let i = 0; i <= storedList.length - 1; i++) {
 
@@ -43,6 +43,8 @@ const renderTasks = () => {
       const trash = document.createElement('span');
       trash.innerHTML = "<i class='fas fa-trash-alt'></i>";
       trash.style.display = 'none';
+      trash.style.cursor = 'pointer';
+      trash.id = storedList.indexOf(storedList[i])
 
       taskContainer.appendChild(taskCheckbox);
       taskContainer.appendChild(taskDescription);
@@ -53,11 +55,15 @@ const renderTasks = () => {
       taskDescription.addEventListener('focus', () => {
         dots.style.display = 'none';
         trash.style.display = 'flex';
+        trash.addEventListener('mousedown', (e) => {
+          e.preventDefault()
+          deleteTask(parseInt(trash.id))
+        })
       });
 
       taskDescription.addEventListener('blur', () => {
-        dots.style.display = 'flex';
-        trash.style.display = 'none';
+        dots.style.display = 'none';
+        trash.style.display = 'flex';
         editTask(taskDescription, storedList, storedList[i].index)
       });
 

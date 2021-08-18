@@ -16,8 +16,8 @@ const addButton = document.querySelector('.add');
 const clearCompletedLink = document.querySelector('.clear-all');
 
 const renderTasks = () => {
-  while (container.firstChild) {
-    container.removeChild(container.firstChild);
+  while (container.lastChild) {
+    container.removeChild(container.lastChild);
   }
 
   const storedList = JSON.parse(localStorage.getItem('todo-list'));

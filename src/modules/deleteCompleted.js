@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable import/no-cycle */
+/* eslint-disable no-plusplus */
 import renderTasks from '../index.js';
 import saveStorage from './saveStorage.js';
 
@@ -8,9 +9,9 @@ const deleteCompleted = () => {
 
   const uncompletedItems = storedItems.filter((item) => item.completed === false);
 
-  let index = 1
-  for (let uncompletedItem of uncompletedItems) {
-    uncompletedItem.index = index++
+  let index = 1;
+  for (let i = 0; i <= uncompletedItems.length - 1; i++) {
+    uncompletedItems[i].index = index++;
   }
   saveStorage(uncompletedItems);
   renderTasks();

@@ -41,24 +41,17 @@ const renderTasks = () => {
         taskDescription.classList.add('strike');
       }
 
-      const dots = document.createElement('span');
-      dots.innerHTML = "<i class='fas fa-ellipsis-v'></i>";
-
       const trash = document.createElement('span');
       trash.innerHTML = "<i class='fas fa-trash-alt'></i>";
-      trash.style.display = 'none';
       trash.style.cursor = 'pointer';
       trash.id = storedList.indexOf(storedList[i]);
 
       taskContainer.appendChild(taskCheckbox);
       taskContainer.appendChild(taskDescription);
-      taskContainer.appendChild(dots);
       taskContainer.appendChild(trash);
       container.appendChild(taskContainer);
 
       taskDescription.addEventListener('focus', () => {
-        dots.style.display = 'none';
-        trash.style.display = 'flex';
         taskDescription.classList.remove('strike');
         trash.addEventListener('mousedown', (e) => {
           e.preventDefault();
@@ -67,8 +60,6 @@ const renderTasks = () => {
       });
 
       taskDescription.addEventListener('blur', (e) => {
-        dots.style.display = 'none';
-        trash.style.display = 'flex';
         editTask(e.target, storedList, storedList[i]);
       });
 

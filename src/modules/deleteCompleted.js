@@ -7,6 +7,11 @@ const deleteCompleted = () => {
   const storedItems = JSON.parse(localStorage.getItem('todo-list'));
 
   const uncompletedItems = storedItems.filter((item) => item.completed === false);
+
+  let index = 1
+  for (let uncompletedItem of uncompletedItems) {
+    uncompletedItem.index = index++
+  }
   saveStorage(uncompletedItems);
   renderTasks();
 };
